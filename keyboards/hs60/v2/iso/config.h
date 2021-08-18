@@ -143,3 +143,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // VIA lighting is handled by the keyboard-level code
 #define VIA_CUSTOM_LIGHTING_ENABLE
+
+// RGB Underglow Options
+#define RGB_DI_PIN A6
+#define RGBLED_NUM 16
+#define RGBLIGHT_ANIMATIONS
