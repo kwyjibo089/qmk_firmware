@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-#include "keymap_german.h"
+#include keymap_extras/keymap_german.h
 
 //This is the ISO version of the PCB
 
