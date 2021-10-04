@@ -26,7 +26,7 @@
 #define ANIM_FRAME_DURATION 200
 #define ANIM_SIZE 512
 
-static long int oled_timeout = 600000; // 10 minutes
+static long int oled_timeout = 300000; // 5 minutes
 bool gui_on = true;
 char wpm_str[10];
 uint32_t anim_timer = 0;
@@ -64,9 +64,25 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     switch (index) {
         case 0:
             if (clockwise) {
-                tap_code(KC_VOLU);
+                if (IS_LAYER_ON(0)) {
+                    tap_code16(C(KC_RGHT));
+                }
+                if (IS_LAYER_ON(1)) {
+                    tap_code(KC_VOLU);
+                }
+                if (IS_LAYER_ON(2)) {
+                    tap_code16(C(S(KC_O)));
+                }
             } else {
-                tap_code(KC_VOLD);
+                if (IS_LAYER_ON(0)) {
+                    tap_code16(C(KC_LEFT));
+                }
+                if (IS_LAYER_ON(1)) {
+                    tap_code(KC_VOLD);
+                }
+                if (IS_LAYER_ON(2)) {
+                    tap_code16(C(S(KC_M)));
+                }
             }
         break;
     }
