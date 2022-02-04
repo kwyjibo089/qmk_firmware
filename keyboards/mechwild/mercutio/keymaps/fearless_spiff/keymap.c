@@ -36,7 +36,8 @@
 enum layers {
   QWERT,
   FN_1,
-  FN_2
+  FN_2,
+  FN_MOUSE
 };
 
 enum custom_user_keycodes {
@@ -117,14 +118,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     	  KC_GESC,          _______, _______, _______, DE_LCBR, DE_RCBR, _______, DE_UDIA, KC_UP,    DE_ODIA, DE_QUES, KC_DEL,
     	  _______,          DE_ADIA, DE_SS,   _______, DE_LPRN, DE_RPRN, _______, KC_LEFT, KC_DOWN, KC_RIGHT, DE_HASH, _______,
     	  _______, DE_CIRC, DE_ACUT, _______, _______, DE_LBRC, DE_RBRC, KC_HOME, KC_END,  DE_QUOT,  DE_DQUO,          DE_EQL,
-    	  _______,   _______, _______,          _______, _______,          _______,          DE_BSLS, DE_SLSH,         DE_TILD ),
+    	  _______,   _______, _______,          MO(3),   MO(3),          MO(3),          DE_BSLS, DE_SLSH,         DE_TILD ),
 
     [FN_2] = LAYOUT_all(
                                                                                                                       _______,
     	  KC_F1,            KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_BSPC,
     	  KC_1,             KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______, _______,
     	  _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_COMM, KC_DOT,           _______,
-    	  _______, _______, _______,          _______, _______,          _______,          _______, _______,          _______ )
+    	  _______, _______, _______,          _______, _______,          _______,          _______, _______,          _______ ),
+
+    [FN_MOUSE] = LAYOUT_all(
+                                                                                                                      _______,
+          _______,          _______, _______, _______, _______, _______, _______, KC_BTN1, KC_MS_U, KC_BTN2, KC_BTN3, _______,
+          _______,          _______, _______, _______, KC_ACL0, _______, KC_WH_U, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D, _______,
+          _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______,  _______,          _______,
+          _______,   _______, _______,        _______,   _______,        _______,          _______, _______,         _______ )
 };
 
 #ifdef ENCODER_ENABLE
